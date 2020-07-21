@@ -3,7 +3,8 @@ const fs = require("fs");
 const axios = require("axios");
 const util = require("util");
 
-const writeFileAsync = util.promisify(fs.writeFile);
+
+const appendFileAsync = util.promisify(fs.appendFile);
 
 function promptUser() {
     return inquirer.prompt([
@@ -22,37 +23,13 @@ function promptUser() {
             message: "Provide project description"
         },
 
-        {
-            type: "input",
-            name: "usage",
-            message: "What will this project be used for?"
-        },
-        {
-            type: "input",
-            name: "licence",
-            message: "Enter licenses used"
-        },
-        {
-            type: "input",
-            name: "contributing",
-            message: "Enter contributing parties"
-        },
-
-        {
-            type: "input",
-            name: "username",
-            message: "Enter Github username"
-        },
-        {
-            type: "input",
-            name: "repo",
-            message: "Enter repository link?"
-        },
 
         {
             type: "input",
             name: "install",
             message: "Enter installation instructions"
+
+
         },
 
         {
@@ -62,59 +39,245 @@ function promptUser() {
         },
 
         {
+            type: "checkbox",
+            message: "Enter licenses used",
+            name: "licence",
+            choices: ["MIT", "EPL-2.0", "Apache 2"]
+
+
+
+        },
+        {
             type: "input",
-            name: "usage",
+            name: "contributing",
+            message: "Enter contributing parties"
+        },
+
+        {
+            type: "input",
+            name: "tests",
+            message: "Enter relevant tests"
+        },
+
+        {
+            type: "input",
+            name: "faq",
+            message: "Enter questions"
+        },
+
+
+        {
+            type: "input",
+            name: "git",
             message: "Enter Github username"
         },
 
         {
             type: "input",
-            name: "FAQ",
-            message: "Enter FAQ"
-        }
-    ]);
+            name: "email",
+            message: "Enter your email address"
+        },
+
+
+    ])
 }
 
-function generateHTML(answers) {
+// function licenseBadge() {
 
-    return `<!DOCTYPE html>
-    <html lang="en">
-    <head>
-      <meta charset="UTF-8">
-      <meta http-equiv="X-UA-Compatible" content="ie=edge">
-      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-      <title>Document</title>
-    </head>
-    <body>
-      <div class="jumbotron jumbotron-fluid">
-      <div class="container">
-        <h1 class="display-4"> Title: ${  answers.title}</h1>
-        <p class="lead">Description: ${  answers.description}.</p>
-        <p class="lead">Installation Instructions: ${answers.install}.</p>
-        <p class="lead">Suggest Usage: ${answers.usage}.</p>
-        <p class="lead">License: ${  answers.license}.</p>
-        <p class="lead">Project Contributors: ${  answers.contributors}.</p>
-        <p class="lead">FAQ: ${  answers.FAQ}.</p>
-        <p class="lead">Github Repository: ${answers.repo}.</p>
-        <p class="lead">Deployed Page: ${  answers.deployed}.</p>
-    
-       
-      </div>
-    </div>
-    </body>
-    // </html>`;
+//     if (answers.licence === "MIT") {
 
-}
+
+        
+
+//         fs.appendFileSync("README.md", (![MIT]("https://img.shields.io/apm/l/ReadMe") + '\n\n'), function (err) {
+
+//             if (err) {
+//                 console.log(err);
+
+//             } else {
+//                 console.log("Success")
+//             }
+//         })
+
+
+
+            
+//     }
+//     else if (answers.licence ==="EPL-2.0") {
+
+//         return  "![EPL-2.0](//https://img.shields.io/eclipse-marketplace/l/notepad4e)";
+
+
+//     }
+
+//     else {
+//         return  "![Apache 2](https://img.shields.io/hexpm/l/plug) "
+//     }
+
+
+
+        
+
+// }
 
 promptUser()
-  .then(function(answers) {
-    const html = generateHTML(answers);
+    .then(function (answers) {
 
-    return writeFileAsync("index.html", html);
-  })
-  .then(function() {
-    console.log("Successfully wrote to index.html");
-  })
-  .catch(function(err) {
-    console.log(err);
-  });
+
+          //Title
+          fs.appendFileSync("README.md", ("# " + "**" + answers.title + "**" + '\n\n'), function (err) {
+
+            if (err) {
+                console.log(err);
+
+            } else {
+                console.log("Success")
+            }
+        })
+
+            //this IF statement is an attempt for including badges. Not working yet
+        if (answers.licence === "MIT") {
+
+
+        
+
+            fs.appendFileSync("README.md", ("https://img.shields.io/apm/l/ReadMe" + '\n\n'), function (err) {
+    
+                if (err) {
+                    console.log(err);
+    
+                } else {
+                    console.log("Success")
+                }
+            })
+    
+    
+    
+                
+        }
+
+
+        //Table of Contents
+        fs.appendFileSync("README.md", ("## Table of contents" + '\n' + "- [Description](#Description)" + '\n' + "- [Installation](#Installation)" + '\n' + "- [Usage](#Usage)" + '\n' + "- [License](#License)" + '\n' + "- [Contributing](#Contributing)" + '\n' + "- [Tests](#Tests)" + '\n' + "- [Questions](#Questions)" + '\n\n'), function (err) {
+
+            if (err) {
+                console.log(err);
+
+            } else {
+                console.log("Success")
+            }
+        })
+
+        //description
+        fs.appendFileSync("README.md", ("## Description of project:  " + '\n' + answers.description + '\n\n'), function (err) {
+
+            if (err) {
+                console.log(err);
+
+            } else {
+                console.log("Success")
+            }
+        })
+
+
+
+        //Install instructions
+        fs.appendFileSync("README.md", ("## Installation:  " + '\n' + answers.install + '\n\n'), function (err) {
+
+            if (err) {
+                console.log(err);
+
+            } else {
+                console.log("Success")
+            }
+        })
+
+        //Usage Instructions
+        fs.appendFileSync("README.md", ("## Usage Instructions:  " + '\n' + answers.usage + '\n\n'), function (err) {
+
+            if (err) {
+                console.log(err);
+
+            } else {
+                console.log("Success")
+            }
+        })
+
+        //License
+        fs.appendFileSync("README.md", ("## License(s) used:  " + '\n\n' + answers.licence + '\n\n'), function (err) {
+
+            console.log (answers.licence);
+            if (err) {
+                console.log(err);
+
+            } else {
+                console.log("Success")
+            }
+        })
+
+        //Contributing Parties
+        fs.appendFileSync("README.md", ("## Contributing:  " + '\n' + answers.contributing + '\n\n'), function (err) {
+
+            if (err) {
+                console.log(err);
+
+            } else {
+                console.log("Success")
+            }
+        })
+
+
+
+        //Tests
+        fs.appendFileSync("README.md", ("## Tests:  " + '\n' + answers.tests + '\n\n'), function (err) {
+
+            if (err) {
+                console.log(err);
+
+            } else {
+                console.log("Success")
+            }
+        })
+
+        //Developed by
+        fs.appendFileSync("README.md", ("## Application developed by:  " + '\n' + answers.git + '\n\n'), function (err) {
+
+            if (err) {
+                console.log(err);
+
+            } else {
+                console.log("Success")
+            }
+        })
+
+
+        //FAQ
+        fs.appendFileSync("README.md", ("## Questions:  " + '\n' + answers.faq + '\n' + "Github Profile:  " + "https://github.com/" + answers.git + '\n' + "Contact me at  " + answers.email + " with additional questions!"), function (err) {
+
+            if (err) {
+                console.log(err);
+
+            } else {
+                console.log("Success")
+            }
+        })
+
+
+
+
+    })
+
+
+
+
+
+
+
+
+// ["MIT", "EPL-2.0", "Apache 2"]
+// src="https://img.shields.io/apm/l/ReadMe" ----MIT
+
+
+//https://img.shields.io/hexpm/l/plug         ----Apache2
+
+//https://img.shields.io/eclipse-marketplace/l/notepad4e ---EPL 2.0
