@@ -1,36 +1,42 @@
-# **README Generator**
+![GitHub license](https://img.shields.io/badge/license-MIT-red.svg)
+        
 
-## Table of contents
-- [Description](#Description)
-- [Installation](#Installation)
-- [Usage](#Usage)
-- [License](#License)
-- [Contributing](#Contributing)
-- [Tests](#Tests)
-- [Questions](#Questions)
 
-## Description of project:  
-Dynamically generates README based on user response. The inspiration behind this project was to make it easy to generate a quality README with less effort required from the user. The quality of a README often differentiates a good project from a bad project. A good one takes advantage of the opportunity to explain and showcase what your application does, justify the technologies used, and even talk about some of the challenges you faced and features you hope to implement in the future. 
+    # README Generator
 
-## Installation:  
-Not applicable
 
-## Usage Instructions:  
-Run "node index.js" in your terminal then answer prompts
+    ## Description 
 
-## License(s) used:  
+    Generates quality README based off user input
 
-MIT
+    ## Table of Contents
 
-## Contributing:  
-Hisham Amery
+    * [Installation](#installation)
+    * [Usage](#usage)
+    * [Credits](#credits)
+    * [License](#license)
+    * [Contributing](#contributing)
+    * [Tests](#tests)
+    * [Questions](#questions) 
+    
+    ## Installation
+    N/A
 
-## Tests:  
-Not applicable 
 
-## Application developed by:  
-hamery93
+    ## Usage 
+    Run "node index.js" in terminal and follow prompts
 
-## Questions:  
-Github Profile:  https://github.com/hamery93
-Contact me at  hishamamery@gmail.com with additional questions!
+    
+    ## License
+    Licensed by MIT
+    
+    ## Contributing
+    Hisham Amery
+
+    ## Tests
+    N/A
+    
+    ## Questions?
+    https://github.com/hamery93
+    Email me here: hishamamery@gmail.com
+    
