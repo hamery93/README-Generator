@@ -32,6 +32,5 @@ Not applicable
 hamery93
 
 ## Questions:  
-Not applicable
 Github Profile:  https://github.com/hamery93
 Contact me at  hishamamery@gmail.com with additional questions!
