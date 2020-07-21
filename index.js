@@ -94,43 +94,43 @@ function generateReadMe(answers) {
     return `${generateLicense(answers.license)}
 
 
-    # ${answers.title}
+# ${answers.title}
 
 
-    ## Description 
+## Description 
 
-    ${answers.description}
+${answers.description}
 
-    ## Table of Contents
+## Table of Contents
 
-    * [Installation](#installation)
-    * [Usage](#usage)
-    * [Credits](#credits)
-    * [License](#license)
-    * [Contributing](#contributing)
-    * [Tests](#tests)
-    * [Questions](#questions) 
+* [Installation](#installation)
+* [Usage](#usage)
+* [Credits](#credits)
+* [License](#license)
+* [Contributing](#contributing)
+* [Tests](#tests)
+* [Questions](#questions) 
     
-    ## Installation
-    ${answers.install}
+## Installation
+${answers.install}
 
 
-    ## Usage 
-    ${answers.usage}
+## Usage 
+${answers.usage}
 
     
-    ## License
-    Licensed by ${answers.license}
+## License
+Licensed by ${answers.license}
     
-    ## Contributing
-    ${answers.contributing}
+## Contributing
+${answers.contributing}
 
-    ## Tests
-    ${answers.tests}
+## Tests
+${answers.tests}
     
-    ## Questions?
-    https://github.com/${answers.git}
-    Email me here: ${answers.email}
+## Questions
+https://github.com/${answers.git}
+Email me here: ${answers.email}
     `
 }
 

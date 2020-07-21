@@ -2,46 +2,41 @@
         
 
 
-    # README Generator
+# README Generator
 
 
-    ## Description 
+## Description 
 
-   Dynamically generates quality README based off user input. The quality of a README often differentiates a good project from a bad project.
- A good one takes advantage of the opportunity to explain and showcase what your application does, justify the technologies used, and even talk about some of the challenges you faced and features you hope to implement in the future. 
+Dynamically populates README file using user input
 
-    ## Table of Contents
+## Table of Contents
 
-    * [Installation](#installation)
-    * [Usage](#usage)
-    * [Credits](#credits)
-    * [License](#license)
-    * [Contributing](#contributing)
-    * [Tests](#tests)
-    * [Questions](#questions) 
+* [Installation](#installation)
+* [Usage](#usage)
+* [Credits](#credits)
+* [License](#license)
+* [Contributing](#contributing)
+* [Tests](#tests)
+* [Questions](#questions) 
     
-    ## Installation
-    N/A
+## Installation
+N/A
 
 
-    ## Usage 
-    Run "node index.js" in terminal and follow prompts
-
-![README Screenshot](https://github.com/hamery93/README-Generator/blob/master/applicationScreenshot.jpg)
-
-
+## Usage 
+Run "node index.js" in terminal and follow prompts
 
     
-    ## License
-    Licensed by MIT
+## License
+Licensed by MIT
     
-    ## Contributing
-    Hisham Amery
+## Contributing
+Hisham Amery
 
-    ## Tests
-    N/A
+## Tests
+N/A
     
-    ## Questions?
-    https://github.com/hamery93
-    Email me here: hishamamery@gmail.com
+## Questions
+https://github.com/hamery93
+Email me here: hishamamery@yahoo.com
     
